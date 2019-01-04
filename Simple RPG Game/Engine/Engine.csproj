@@ -42,21 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Factories\WorldFactory.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GameSession.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Components\FarmFields.png" />
-    <Content Include="Components\Farmhouse.png" />
-    <Content Include="Components\HerbalistsGarden.png" />
-    <Content Include="Components\HerbalistsHut.png" />
+    <Resource Include="Components\FarmFields.png" />
+    <Resource Include="Components\Farmhouse.png" />
+    <Resource Include="Components\HerbalistsGarden.png" />
+    <Resource Include="Components\HerbalistsHut.png" />
     <Resource Include="Components\Home.png" />
-    <Content Include="Components\SpiderForest.png" />
-    <Content Include="Components\TownGate.png" />
-    <Content Include="Components\TownSquare.png" />
-    <Content Include="Components\Trader.png" />
+    <Resource Include="Components\SpiderForest.png" />
+    <Resource Include="Components\TownGate.png" />
+    <Resource Include="Components\TownSquare.png" />
+    <Resource Include="Components\Trader.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

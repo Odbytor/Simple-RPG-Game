@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Engine.Commands;
 using Engine.Models;
+using Engine.Factories;
 
 namespace Engine.ViewModels
 {
-   public class GameSession
+    public class GameSession
     {
+        public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation { get; set; }
-        
+
         //Commands
         public RelayCommand AddXPCommand { get; set; }
         //Constructor
@@ -27,14 +29,12 @@ namespace Engine.ViewModels
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 1;
             AddXPCommand = new RelayCommand(AddXP);
-            
-            //Location related stuff
-            CurrentLocation = new Location();
-            CurrentLocation.Name = "Home";
-            CurrentLocation.XCoordinate = 0;
-            CurrentLocation.YCoordinate = 1;
-            CurrentLocation.Description = "This is your house.";
-            CurrentLocation.ImageName = "/Engine;component/Components/Home.png";
+
+           
+            //World
+            WorldFactory factory = new WorldFactory();
+            CurrentWorld = factory.CreateWorld();
+            CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
 
         private void AddXP(object s)
@@ -44,3 +44,4 @@ namespace Engine.ViewModels
 
     }
 }
+
