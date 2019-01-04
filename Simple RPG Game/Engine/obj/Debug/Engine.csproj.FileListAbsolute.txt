@@ -11,3 +11,4 @@ C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine
 C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
 C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.dll
 C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.pdb
+C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csprojAssemblyReference.cache
