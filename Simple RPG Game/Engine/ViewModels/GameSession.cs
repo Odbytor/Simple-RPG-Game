@@ -40,41 +40,47 @@ namespace Engine.ViewModels
         public GameSession()
         {
             //Player related stuff
-            CurrentPlayer = new Player();
-            CurrentPlayer.Name = "Geralt";
-            CurrentPlayer.Gold = 100000;
-            CurrentPlayer.CharacterClass = Player._CharacterClass.Paladin;
-            CurrentPlayer.HitPoints = 10;
-            CurrentPlayer.ExperiencePoints = 0;
-            CurrentPlayer.Level = 1;
+            CurrentPlayer = new Player
+            {
+                Name = "Geralt",
+                CharacterClass = Player._CharacterClass.Paladin,
+                HitPoints = 10,
+                Gold = 1000,
+                ExperiencePoints = 0,
+                Level = 1
+
+            };
             //RelayCommands
             MoveNorthCommand = new RelayCommand(OnClickMoveNorth);
             MoveSouthCommand = new RelayCommand(OnClickMoveSouth);
             MoveEastCommand = new RelayCommand(OnClickMoveEast);
             MoveWestCommand = new RelayCommand(OnClickMoveWest);
             //World
-            WorldFactory factory = new WorldFactory();
-            CurrentWorld = factory.CreateWorld();
+            CurrentWorld = WorldFactory.CreateWorld();
             CurrentLocation = CurrentWorld.LocationAt(0, 0);
         }
 
         private void OnClickMoveNorth(object s)
         {
+            if(HasLocationToNorth)
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
         }
 
         private void OnClickMoveWest(object s)
         {
+            if(HasLocationToWest)
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate-1, CurrentLocation.YCoordinate);
         }
 
         private void OnClickMoveEast(object s)
         {
+            if(HasLocationToEast)
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate+1, CurrentLocation.YCoordinate);
         }
 
         private void OnClickMoveSouth(object s)
         {
+            if(HasLocationToWest)
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
         }
 
