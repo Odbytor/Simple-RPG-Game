@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 
 namespace Engine.Models
@@ -87,6 +88,15 @@ namespace Engine.Models
                 _gold = value;
                 OnPropertyChanged(nameof(Gold));
             }
+        }
+
+        public ObservableCollection<Gameitem> Inventory { get; set; }
+        public ObservableCollection<QuestStatus> Quests { get; set; }
+        
+        public Player()
+        { 
+            Inventory = new ObservableCollection<Gameitem>();
+            Quests = new ObservableCollection<QuestStatus>();
         }
 
     }
