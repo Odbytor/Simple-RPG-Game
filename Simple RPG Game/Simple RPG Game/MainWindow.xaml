@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Simple_RPG_Game"
         mc:Ignorable="d"
         FontSize="11pt"
-        Title="Scott's Awesome Game" Height="768" Width="1024">
+        Title="Witcher 4 KUUUURWA DLACZEGO?!" Height="768" Width="1024">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />

@@ -19,3 +19,10 @@ C:\Users\PC\Source\Repos\Simple-RPG-Game3\Simple RPG Game\Engine\obj\Debug\Engin
 C:\Users\PC\Source\Repos\Simple-RPG-Game3\Simple RPG Game\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
 C:\Users\PC\Source\Repos\Simple-RPG-Game3\Simple RPG Game\Engine\obj\Debug\Engine.dll
 C:\Users\PC\Source\Repos\Simple-RPG-Game3\Simple RPG Game\Engine\obj\Debug\Engine.pdb
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\bin\Debug\Engine.dll
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\bin\Debug\Engine.pdb
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csprojAssemblyReference.cache
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.g.resources
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.dll
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.pdb

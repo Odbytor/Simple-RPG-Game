@@ -15,5 +15,16 @@ namespace Engine.Models
         public string Description { get; set; }
         public string ImageName { get; set; }
         public List<Quest> QuestAvailable { get; set; } = new List<Quest>();
-    }
+
+        public List<MonsterEncounter> MonsterHere { get; set; } = new List<MonsterEncounter>();
+
+        public void AddMonster(int monsterID, int chanceofEncountering)
+        {
+            if (MonsterHere.Exists(m => m.MonsterID == monsterID))
+            {
+                MonsterHere.First(m => m.MonsterID == monsterID)
+                    .ChanceOfEncountering = chanceofEncountering;
+            }
+        }
+}
 }
