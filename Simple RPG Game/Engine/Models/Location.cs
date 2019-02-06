@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Engine.Factories;
 
 namespace Engine.Models
 {
@@ -25,6 +26,34 @@ namespace Engine.Models
                 MonsterHere.First(m => m.MonsterID == monsterID)
                     .ChanceOfEncountering = chanceofEncountering;
             }
+            else
+
+            {
+                MonsterHere.Add(new MonsterEncounter(monsterID,chanceofEncountering));
+            }
         }
-}
+
+        public Monster GetMonster()
+        {
+            if (!MonsterHere.Any())
+            {
+                return null;
+            }
+
+            int totalChances = MonsterHere.Sum(m => m.ChanceOfEncountering);
+            int randomNumber = RandomNumberGenerator.NumberBetween(1, totalChances);
+            int runningTotal = 0;
+
+            foreach (MonsterEncounter monsterEncounter in MonsterHere)
+            {
+                runningTotal += monsterEncounter.ChanceOfEncountering;
+                if (randomNumber <= runningTotal)
+                {
+                    return MonsterFactory.GetMonster(monsterEncounter.MonsterID);
+                }
+            }
+
+            return MonsterFactory.GetMonster(MonsterHere.Last().MonsterID);
+        }
+    }
 }

@@ -17,7 +17,7 @@ namespace Engine.Models
 
         public int HitPoints
         {
-            get { return HitPoints; }
+            get { return _hitPoints; }
             private set
             {
                 _hitPoints = value;
