@@ -32,3 +32,10 @@ C:\Users\DonMa\Source\Repos\Simple-RPG-Game2\Simple RPG Game\Engine\obj\Debug\En
 C:\Users\DonMa\Source\Repos\Simple-RPG-Game2\Simple RPG Game\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
 C:\Users\DonMa\Source\Repos\Simple-RPG-Game2\Simple RPG Game\Engine\obj\Debug\Engine.dll
 C:\Users\DonMa\Source\Repos\Simple-RPG-Game2\Simple RPG Game\Engine\obj\Debug\Engine.pdb
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\bin\Debug\Engine.dll
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\bin\Debug\Engine.pdb
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csprojAssemblyReference.cache
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.g.resources
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.dll
+C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Engine\obj\Debug\Engine.pdb

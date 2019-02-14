@@ -30,10 +30,7 @@ namespace Engine.Commands
             _targetExecuteMethod = executeMethod;
             _targetCanExecuteMethod = canExecuteMethod;
         }
-        public void RaiseCanExecuteChanged()
-        {
-            if (CanExecuteChanged != null) CanExecuteChanged(this, EventArgs.Empty);
-        }
+       
     }
 }
 

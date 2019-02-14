@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Commands;
+using Engine.EventArgs;
 using Engine.Models;
 using Engine.Factories;
 
@@ -12,6 +13,8 @@ namespace Engine.ViewModels
 {
     public class GameSession: BaseNotificationClass
     {
+        public event EventHandler<GameMessageEventArgs> OnMessageRaised; 
+
         private Location _CurrentLocation;
         private Monster _currentMonster;
 
@@ -159,6 +162,11 @@ namespace Engine.ViewModels
         private void GetMonsterAtLocation()
         {
             CurrentMonster = CurrentLocation.GetMonster();
+        }
+
+        private void RaiseMessage(string message)
+        {
+            OnMessageRaised?.Invoke(this,new GameMessageEventArgs(message));
         }
     }
 }

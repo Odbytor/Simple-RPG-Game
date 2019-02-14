@@ -25,9 +25,11 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+ 
+        <!--Menu-->
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue"/>
 
+        <!--Player Stats-->
         <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -58,6 +60,7 @@
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
         </Grid>
 
+        <!--Gameplay-->
         <Grid Grid.Row="1" Grid.Column="1"
               Background="Beige">
             <Grid.RowDefinitions>
@@ -70,6 +73,25 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
+            <!--Game Messages-->
+            <Border Grid.Row="0" Grid.Column="0"
+                    Grid.RowSpan="2"
+                    BorderBrush="Gainsboro"
+                    BorderThickness="1">
+
+                <RichTextBox x:Name="GameMessages"
+                             Background="Beige"
+                             VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+
+            </Border>
+
+            <!--Location Information-->
             <Border Grid.Row="0" Grid.Column="1"
                     BorderBrush="Gainsboro"
                     BorderThickness="1">
@@ -99,6 +121,8 @@
                 </Grid>
 
             </Border>
+            
+            <!--Monster Information-->
             <Border Grid.Row="1" Grid.Column="1"
                     BorderBrush="Gainsboro"
                     BorderThickness="1">
@@ -135,6 +159,8 @@
             </Border>
 
         </Grid>
+        
+        <!--Inventory and Quests-->
         <Grid Grid.Row="2" Grid.Column="0"
               Background="BurlyWood">
 
@@ -170,6 +196,8 @@
                 </TabItem>
             </TabControl>
         </Grid>
+        
+        <!--Action controls-->
         <Grid Grid.Row="2" Grid.Column="1"
               Background="Lavender">
 
@@ -182,6 +210,7 @@
                 <ColumnDefinition Width="255" />
             </Grid.ColumnDefinitions>
 
+            <!--Movement controls-->
             <Grid Grid.Row="0" Grid.Column="1">
 
                 <Grid.RowDefinitions>
