@@ -106,3 +106,21 @@ C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Simple RPG G
 C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csproj.CopyComplete
 C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.exe
 C:\Users\DonMa\Source\Repos\Odbytor\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.pdb
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csprojAssemblyReference.cache
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\MainWindow.g.cs
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\App.g.cs
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game_MarkupCompile.cache
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game_MarkupCompile.lref
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.exe
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.pdb
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\bin\Debug\Simple RPG Game.exe.config
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\bin\Debug\Simple RPG Game.exe
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\bin\Debug\Simple RPG Game.pdb
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\bin\Debug\Engine.dll
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\bin\Debug\Engine.pdb
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\MainWindow.baml
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.g.resources
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple_RPG_Game.Properties.Resources.resources
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csproj.GenerateResource.cache
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csproj.CoreCompileInputs.cache
+C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csproj.CopyComplete
