@@ -36,6 +36,7 @@ namespace Engine.ViewModels
 
                 GivePlayerQuestAtLocation();
                 GetMonsterAtLocation();
+                CompleteQuestAtLocation();
             }
         }
 
@@ -123,7 +124,44 @@ namespace Engine.ViewModels
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
         }
 
-       
+       //questing
+
+       private void CompleteQuestAtLocation()
+       {
+           foreach (Quest quest in CurrentLocation.QuestAvailable )
+           {
+               QuestStatus questToComplete =
+                   CurrentPlayer.Quests.FirstOrDefault(q => q.PlayerQuest.ID == quest.ID && !q.IsCompleted);
+
+               if (questToComplete != null)
+               {
+                   if(CurrentPlayer.HasAllTheItems(quest.ItemsToComplete))
+                   {
+                       foreach (ItemQuantity ItemQuantity in quest.ItemsToComplete )
+                       {
+                           for (int i = 0; i > ItemQuantity.Quantity; i++)
+                           CurrentPlayer.RemoveItemFromInventory(
+                           CurrentPlayer.Inventory.First(item => item.ItemTypeID == ItemQuantity.ItemID));
+                       }
+                   }
+                   RaiseMessage(" ");
+                   RaiseMessage($"You completed the {quest.Name}");
+                   CurrentPlayer.ExperiencePoints += quest.RewardExperiencePoints;
+                   RaiseMessage($"You receive {quest.RewardExperiencePoints} XP");
+                   CurrentPlayer.Gold += quest.RewardGold;
+                   RaiseMessage($"You receive {quest.RewardGold} gold!");
+
+                   foreach (ItemQuantity itemQuantity in quest.RewardItems)
+                   {
+                       Gameitem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
+                       CurrentPlayer.AddItemToInventory(rewardItem);
+                       RaiseMessage($"You have received {quest.RewardItems}");
+                   }
+
+                   questToComplete.IsCompleted = true;
+               }
+           }
+       }
 
 
         //Checking visibilty
@@ -167,6 +205,7 @@ namespace Engine.ViewModels
                 if (!CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == quest.ID))
                 {
                     CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                    RaiseMessage($"You have been given a quest:{quest.Name}. {quest.Description}");
                 }
             }
         }
