@@ -19,6 +19,9 @@ namespace Engine.Models
 
         public List<MonsterEncounter> MonsterHere { get; set; } = new List<MonsterEncounter>();
 
+        //Traders
+        public Trader TraderHere { get; set; }
+
         public void AddMonster(int monsterID, int chanceofEncountering)
         {
             if (MonsterHere.Exists(m => m.MonsterID == monsterID))

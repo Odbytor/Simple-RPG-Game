@@ -263,7 +263,13 @@
                         Command="{Binding MoveWestCommand}"
                         Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}"
                         Content="West"/>
-                
+                <!-- Trader BUTOON!-->
+                <Button Grid.Row="1" Grid.Column="1" 
+                        Height="25" Width="65" Margin="10" 
+                        Visibility="{Binding HasTrader, Converter={StaticResource BooleanToVisibility}}"
+                        Click="OnClick_DisplayTradeScreen"
+                        Content="Trade"/>
+
                 <Button Grid.Row="1" Grid.Column="2" 
                         Height="25" Width="65" Margin="10" 
                         Command="{Binding MoveEastCommand}"

@@ -8,6 +8,7 @@ using Engine.Commands;
 using Engine.EventArgs;
 using Engine.Models;
 using Engine.Factories;
+using System.Windows;
 
 namespace Engine.ViewModels
 {
@@ -37,6 +38,7 @@ namespace Engine.ViewModels
                 GivePlayerQuestAtLocation();
                 GetMonsterAtLocation();
                 CompleteQuestAtLocation();
+                CurrentTrader = CurrentLocation.TraderHere;
             }
         }
 
@@ -59,9 +61,28 @@ namespace Engine.ViewModels
         public RelayCommand MoveWestCommand { get; set; }
         //Fighting
         public RelayCommand AttackMonsterCommand { get; set;}
-
+        //TradingRelayCommands
+        public RelayCommand SellCommand { get; set; }
+        public RelayCommand BuyCommand { get; set; }
+        public RelayCommand CloseCommand { get; set; }
 
         public bool HasMonster => CurrentMonster != null;
+        public bool HasTrader => CurrentTrader != null;
+       
+        //Traders
+        private Trader _currentTrader;
+        public Trader CurrentTrader
+        {
+            get { return _currentTrader; }
+            set
+            {
+                _currentTrader = value;
+                OnPropertyChanged(nameof(CurrentTrader));
+                OnPropertyChanged(nameof(HasTrader));
+            }
+        }
+
+        
         
         //Constructor
         public GameSession()
@@ -140,8 +161,7 @@ namespace Engine.ViewModels
                        foreach (ItemQuantity ItemQuantity in quest.ItemsToComplete )
                        {
                            for (int i = 0; i > ItemQuantity.Quantity; i++)
-                           CurrentPlayer.RemoveItemFromInventory(
-                           CurrentPlayer.Inventory.First(item => item.ItemTypeID == ItemQuantity.ItemID));
+                             CurrentPlayer.RemoveItemFromInventory(CurrentPlayer.Inventory.First(item => item.ItemTypeID == ItemQuantity.ItemID));
                        }
                    }
                    RaiseMessage(" ");
@@ -233,18 +253,18 @@ namespace Engine.ViewModels
             }
             else
             {
-                CurrentMonster.HitPoints = -damageToMonster;
-                RaiseMessage($"You hit an {CurrentMonster.Name} for{damageToMonster}!");
+                CurrentMonster.HitPoints -= damageToMonster;
+                RaiseMessage($"You hit {CurrentMonster.Name} for{damageToMonster}!");
             }
             //If monster is killed get loot.
             if (CurrentMonster.HitPoints <= 0)
             {
                 RaiseMessage(" ");
-                RaiseMessage($"You defeated the{CurrentMonster.Name}!");
+                RaiseMessage($"You defeated the {CurrentMonster.Name}!");
                 CurrentPlayer.ExperiencePoints += CurrentMonster.RewardExperiencePoints;
-                RaiseMessage($"You receive{CurrentMonster.RewardExperiencePoints} experience points!");
+                RaiseMessage($"You receive {CurrentMonster.RewardExperiencePoints} experience points!");
                 CurrentPlayer.Gold += CurrentMonster.RewardGold;
-                RaiseMessage($"You got{CurrentMonster.RewardGold} gold!");
+                RaiseMessage($"You've got {CurrentMonster.RewardGold} gold!");
 
                 foreach (ItemQuantity itemQuantity in CurrentMonster.Inventory)
                 {
@@ -257,7 +277,7 @@ namespace Engine.ViewModels
             else
             {
                 //If monster is still alive.
-                int damageToPlayer = CurrentPlayer.HitPoints -=
+                int damageToPlayer = 
                     RandomNumberGenerator.NumberBetween(CurrentMonster.MinimumDamage, CurrentMonster.MaximumDamage);
 
                 if (damageToPlayer == 0)
@@ -273,7 +293,7 @@ namespace Engine.ViewModels
                 if(CurrentPlayer.HitPoints<=0)
                 {
                     RaiseMessage(" ");
-                    RaiseMessage($"You have been killed by{CurrentMonster.Name}");
+                    RaiseMessage($"You have been killed by {CurrentMonster.Name}");
                     CurrentLocation = CurrentWorld.LocationAt(0, -1);
                     CurrentPlayer.HitPoints = CurrentPlayer.Level * 10;
                }
@@ -284,6 +304,9 @@ namespace Engine.ViewModels
         {
             OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
         }
+
+        //TRADING WINDOW
+       
     }
 }
 

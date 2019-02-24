@@ -5,6 +5,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Models;
+using Engine.Factories;
 
 namespace Engine.Factories
 {
@@ -18,10 +19,13 @@ namespace Engine.Factories
                 "There are rows of corn growing here, with giant rats hiding between them.",
                 "/Engine;component/Components/FarmFields.png");
             newworld.LocationAt(-2,-1).AddMonster(2,100);
+            
 
             newworld.AddLocation(-1, -1, "Farmer's House",
                 "This is the house of your neighbor, Farmer Ted.",
                 "/Engine;component/Components/Farmhouse.png");
+            newworld.LocationAt(-1,-1).TraderHere= 
+                TraderFactory.GetTraderByName("FarmerTed");
 
             newworld.AddLocation(0, -1, "Home",
                 "This is your home",
@@ -30,6 +34,8 @@ namespace Engine.Factories
             newworld.AddLocation(-1, 0, "Trading Shop",
                 "The shop of Susan, the trader.",
                 "/Engine;component/Components/Trader.png");
+            newworld.LocationAt(-1,0).TraderHere=
+            TraderFactory.GetTraderByName("Susan");
 
             newworld.AddLocation(0, 0, "Town square",
                 "You see a fountain here.",
@@ -47,6 +53,8 @@ namespace Engine.Factories
             newworld.AddLocation(0, 1, "Herbalist's hut",
                 "You see a small hut, with plants drying from the roof.",
                 "/Engine;component/Components/HerbalistsHut.png");
+            newworld.LocationAt(0,1).TraderHere=
+            TraderFactory.GetTraderByName("Pete the Herbalist");
 
             newworld.LocationAt(0,1).QuestAvailable.Add(QuestFactory.GetQuestByID(1));
 
