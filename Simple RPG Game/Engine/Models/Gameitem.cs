@@ -11,17 +11,18 @@ namespace Engine.Models
         public int ItemTypeID { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
-
-        public Gameitem(int itemtypeID,string name,int price )
+        public bool IsUnique { get; set; }
+        public Gameitem(int itemtypeID,string name,int price, bool isUnique)
         {
             ItemTypeID = itemtypeID;
             Name = name;
             Price = price;
+            IsUnique = isUnique;
         }
 
         public Gameitem Clone()
         {
-            return new Gameitem(ItemTypeID,Name,Price);
+            return new Gameitem(ItemTypeID,Name,Price,IsUnique);
         }
 }
 }

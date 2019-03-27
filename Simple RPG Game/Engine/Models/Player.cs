@@ -9,9 +9,9 @@ using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
-    public class Player : BaseNotificationClass
+    public class Player : LivingEntity
     {
-        private string _name;
+       
         public enum _CharacterClass
         {
            Paladin,
@@ -21,22 +21,10 @@ namespace Engine.Models
         }
 
         private _CharacterClass _characterClass;
-        private int _hitPoints;
+        
         private int _experiencePoints;
         private int _level;
-        private int _gold;
-
-
-
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
+        
 
         public _CharacterClass CharacterClass
         {
@@ -48,18 +36,7 @@ namespace Engine.Models
             }
         }
         
-       
-
-        public int HitPoints
-        {
-            get { return _hitPoints; }
-            set
-            {
-                _hitPoints = value;
-                OnPropertyChanged(nameof(HitPoints));
-            }
-        }
-
+      
         public int ExperiencePoints
         {
             get { return _experiencePoints; }
@@ -80,39 +57,12 @@ namespace Engine.Models
             }
         }
 
-        public int Gold
-        {
-            get { return _gold; }
-            set
-            {
-                _gold = value;
-                OnPropertyChanged(nameof(Gold));
-            }
-        }
-
-        public ObservableCollection<Gameitem> Inventory { get; set; }
-
-        public List<Gameitem> Weapons =>
-            Inventory.Where(i => i is Weapon).ToList();
-
         public ObservableCollection<QuestStatus> Quests { get; set; }
         
         public Player()
         { 
-            Inventory = new ObservableCollection<Gameitem>();
+            
             Quests = new ObservableCollection<QuestStatus>();
-        }
-
-        public void AddItemToInventory(Gameitem item)
-        {
-            Inventory.Add(item);
-            OnPropertyChanged(nameof(Weapons));
-        }
-
-        public void RemoveItemFromInventory(Gameitem item)
-        {
-            Inventory.Remove(item);
-            OnPropertyChanged(nameof(Weapons));
         }
 
         public bool HasAllTheItems(List<ItemQuantity> Items)
