@@ -32,7 +32,7 @@ namespace Engine.Models
             else
 
             {
-                MonsterHere.Add(new MonsterEncounter(monsterID,chanceofEncountering));
+                MonsterHere.Add(new MonsterEncounter(monsterID, chanceofEncountering));
             }
         }
 
@@ -58,5 +58,15 @@ namespace Engine.Models
 
             return MonsterFactory.GetMonster(MonsterHere.Last().MonsterID);
         }
+
+        
+
+
     }
 }
+
+
+
+
+
+

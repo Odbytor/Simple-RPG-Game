@@ -156,28 +156,28 @@ namespace Engine.ViewModels
 
                if (questToComplete != null)
                {
-                   if(CurrentPlayer.HasAllTheItems(quest.ItemsToComplete))
-                   {
-                       foreach (ItemQuantity ItemQuantity in quest.ItemsToComplete )
-                       {
-                           for (int i = 0; i > ItemQuantity.Quantity; i++)
-                             CurrentPlayer.RemoveItemFromInventory(CurrentPlayer.Inventory.First(item => item.ItemTypeID == ItemQuantity.ItemID));
-                       }
-                   }
-                   RaiseMessage(" ");
-                   RaiseMessage($"You completed the {quest.Name}");
-                   CurrentPlayer.ExperiencePoints += quest.RewardExperiencePoints;
-                   RaiseMessage($"You receive {quest.RewardExperiencePoints} XP");
-                   CurrentPlayer.Gold += quest.RewardGold;
-                   RaiseMessage($"You receive {quest.RewardGold} gold!");
+                    if (CurrentPlayer.HasAllTheItems(quest.ItemsToComplete))
+                    {
+                        foreach (ItemQuantity ItemQuantity in quest.ItemsToComplete)
+                        {
+                            for (int i = 0; i > ItemQuantity.Quantity; i++)
+                                CurrentPlayer.RemoveItemFromInventory(CurrentPlayer.Inventory.First(item => item.ItemTypeID == ItemQuantity.ItemID));
+                        }
 
-                   foreach (ItemQuantity itemQuantity in quest.RewardItems)
-                   {
-                       Gameitem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
-                       CurrentPlayer.AddItemToInventory(rewardItem);
-                       RaiseMessage($"You have received {quest.RewardItems}");
-                   }
+                        RaiseMessage(" ");
+                        RaiseMessage($"You completed the {quest.Name}");
+                        CurrentPlayer.ExperiencePoints += quest.RewardExperiencePoints;
+                        RaiseMessage($"You receive {quest.RewardExperiencePoints} XP");
+                        CurrentPlayer.Gold += quest.RewardGold;
+                        RaiseMessage($"You receive {quest.RewardGold} gold!");
 
+                        foreach (ItemQuantity itemQuantity in quest.RewardItems)
+                        {
+                            Gameitem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
+                            CurrentPlayer.AddItemToInventory(rewardItem);
+                            RaiseMessage($"You have received {quest.RewardItems}");
+                        }
+                    }
                    questToComplete.IsCompleted = true;
                }
            }
@@ -272,7 +272,7 @@ namespace Engine.ViewModels
                     CurrentPlayer.AddItemToInventory(Item);
                     RaiseMessage($"You receive {itemQuantity.Quantity} x {Item.Name}");
                 }
-                GetMonsterAtLocation();
+                CurrentMonster = null;
             }
             else
             {

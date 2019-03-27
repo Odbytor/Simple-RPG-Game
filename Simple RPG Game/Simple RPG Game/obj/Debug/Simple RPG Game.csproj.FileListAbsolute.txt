@@ -126,3 +126,5 @@ C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\De
 C:\Users\PC\Source\Repos\Simple-RPG-Game4\Simple RPG Game\Simple RPG Game\obj\Debug\Simple RPG Game.csproj.CopyComplete
 C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\TradeScreen.baml
 C:\Users\PC\Source\Repos\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\TradeScreen.g.cs
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\TradeScreen.baml
+C:\Users\DonMa\Source\Repos\Simple-RPG-Game\Simple RPG Game\Simple RPG Game\obj\Debug\TradeScreen.g.cs

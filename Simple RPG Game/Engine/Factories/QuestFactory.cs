@@ -18,7 +18,7 @@ namespace Engine.Factories
               List<ItemQuantity> rewardItems = new List<ItemQuantity>();
               
 
-              itemsToComplete.Add(new ItemQuantity(9001,5));
+              itemsToComplete.Add(new ItemQuantity(9001,1));
               rewardItems.Add(new ItemQuantity(1002, 1));
 
             //Create quest here.
