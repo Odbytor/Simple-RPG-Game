@@ -12,7 +12,7 @@ namespace Engine.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public bool IsUnique { get; set; }
-        public Gameitem(int itemtypeID,string name,int price, bool isUnique)
+        public Gameitem(int itemtypeID,string name,int price, bool isUnique=false)
         {
             ItemTypeID = itemtypeID;
             Name = name;

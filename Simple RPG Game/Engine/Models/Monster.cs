@@ -25,17 +25,15 @@ namespace Engine.Models
 
         
 
-        public Monster(string name, string imageName, int maximumHitPoints, int hitPoints, int minimumDamage, int maximumDamage, int rewardExperiencePoints,
-            int rewardGold)
-        {
-            Name = name;
+        public Monster(string name, string imageName, int maximumHp, int currentHp, int minimumDamage, int maximumDamage, int rewardExperiencePoints,
+            int gold): 
+            base(name, maximumHp, currentHp, gold)
+        { 
             ImageName = string.Format("/Engine;component/Components/Monsters/{0}", imageName);
-            MaximumHitPoints = maximumHitPoints;
-            CurrentHitPoints = hitPoints;
             MinimumDamage = minimumDamage;
             MaximumDamage = maximumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
-            Gold = rewardGold;
+          
 
         }
     }
